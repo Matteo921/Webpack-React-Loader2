@@ -1,16 +1,16 @@
 const path = require('path');
 
 module.exports = (env) => {
+	const environment = env || 'production';
+	
     return {
-
-   
-    mode: 'development',
-    entry: './src/app.js',
-        output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'app.bundle.js'
-     },
-    }
+		mode: envoironment,
+		entry: './src/app.js',
+		output: {
+			path: path.resolve(__dirname, 'build'),
+				filename: 'app.' + environment + '.bundle.js'
+		 },
+		}
     module: {
         rules: [
             {
